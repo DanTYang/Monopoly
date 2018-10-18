@@ -43,4 +43,12 @@ public class Chance
 		deck.add(o);
 		deck.add(p);
 	}
+	public Card draw()
+	{
+		if(deck.isEmpty())
+		{
+			insertCards();
+		}
+		return deck.poll();
+	}
 }

@@ -45,4 +45,12 @@ public class CommunityChests
 		deck.add(p);
 		deck.add(q);
 	}
+	public Card draw()
+	{
+		if(deck.isEmpty())
+		{
+			insertCards();
+		}
+		return deck.poll();
+	}
 }

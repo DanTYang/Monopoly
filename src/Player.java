@@ -57,4 +57,8 @@ public class Player
 	{
 		return isJail;
 	}
+	public String toString()
+	{
+		return ("{Name: " + name + ", Cash: " + cash + "}");
+	}
 }
