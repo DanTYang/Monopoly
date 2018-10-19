@@ -8,6 +8,7 @@ public class MonoTester
 		DiceRoller Dice = new DiceRoller();
 		Chance ChanceDeck = new Chance();
 		CommunityChests CC = new CommunityChests();
+		Properties Anime = new Properties();
 		Queue Players = new LinkedList();
 		
 		System.out.println("How Many Players?");
@@ -31,7 +32,16 @@ public class MonoTester
 		{
 			Dice.rerollDice();
 			Player tempPlayer = (Player) Players.poll();
+			tempPlayer.movePlayer(Dice.total());
+			int playerPosition = tempPlayer.getPosition();
+			Property tempProperty = Anime.getProp(playerPosition);
+			if(tempProperty.available())
+			{
+				System.out.println("Bid or Buy?");		
+				String BidBuy = a.nextLine();
+			}
 			
+			Players.add(tempPlayer);
 		}
 		System.out.println(Players);
 		System.out.println("Dice A: " + Dice.diceA() + " Dice B: " + Dice.diceB());

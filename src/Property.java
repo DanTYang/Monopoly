@@ -4,16 +4,14 @@ public class Property
 	private int houses;
 	private int cost;
 	private String name;
-	private int position;
 	private int MonopolyGroup;
 	private boolean isMonopoly;
 	private boolean isMorgage;  
 	private boolean isAvailable;
 	private Player ownership;
-	public Property(String n, int pos, int G, int c)
+	public Property(String n, int G, int c)
 	{
 		name = n;
-		position = pos;
 		MonopolyGroup = G;
 		houses = 0;
 		cost = c;
