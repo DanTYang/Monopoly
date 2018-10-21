@@ -67,6 +67,10 @@ public class Player
 	{
 		Position += b;
 	}
+	public void setPosition(int b)
+	{
+		Position = b;
+	}
 	public int getPosition()
 	{
 		return Position;

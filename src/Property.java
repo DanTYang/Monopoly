@@ -1,3 +1,5 @@
+import java.util.Queue;
+import java.util.Scanner;
 
 public class Property 
 {
@@ -96,6 +98,23 @@ public class Property
 		{
 			isAvailable = true;
 		}
+	}
+	public void bid(int a) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int counter = a;
+		int playerNum = 1;
+		int max = 0;;
+		while(counter > 0)
+		{
+			System.out.println("How much is Player " + playerNum + " betting?");
+			int amount = sc.nextInt();
+			if(amount > max)
+			{
+				max = amount;
+			}
+		}
+		
 	}
 	
 }
