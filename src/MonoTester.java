@@ -60,6 +60,12 @@ public class MonoTester
 			System.out.println("You have landed on: " + tempProperty.name());
 			System.out.println("Your Cash is: " + tempPlayer.DisplayCash());
 			System.out.println("The Property Costs: " + tempProperty.cost());
+			if(tempProperty.MonopolyGroup() == -1)
+			{
+				System.out.println("You have landed on " + tempProperty.name());
+				Players.add(tempPlayer);
+				continue;
+			}
 			if(tempProperty.available())
 			{
 				System.out.println("Bid or Buy?");		
@@ -70,6 +76,9 @@ public class MonoTester
 					{
 						System.out.println("You have now bought " + tempProperty.name());
 						tempPlayer.takeCash(tempProperty.cost());
+						tempProperty.changeAvailable();
+						tempProperty.modifyOwnership(tempPlayer);
+						tempPlayer.addProperty(tempProperty);
 					}
 					else
 					{
@@ -88,8 +97,8 @@ public class MonoTester
 			}
 			else
 			{
-				System.out.println("Property " + tempProperty.name() + " is already owned by another player");
-				if(tempPlayer.DisplayCash() >= tempProperty.cost())
+				System.out.println("Property " + tempProperty.name() + " is already owned by another player------------------------------------");
+				if(tempPlayer.DisplayCash() < tempProperty.cost())
 				{
 					tempPlayer.editBankrupt();
 					System.out.println("Player " + tempPlayer.DisplayName() + " is now out of the game");
@@ -103,6 +112,11 @@ public class MonoTester
 				}
 			}
 			System.out.println("What is your next action?");
+			String input = a.nextLine();
+			if(input.equals("house"))
+			{
+				
+			}
 			//Add trading System, add Creating and upgrading house system,
 			Players.add(tempPlayer);
 		}

@@ -116,5 +116,9 @@ public class Property
 		}
 		
 	}
+	public String toString()
+	{
+		return name();
+	}
 	
 }

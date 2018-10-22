@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Player 
 {
 	private int cash;
@@ -6,12 +6,14 @@ public class Player
 	private boolean isBankrupt;
 	private boolean isJail;
 	private int Position;
+	private ArrayList<Property> Ownerships;
 	public Player(String n, int startcash)
 	{
 		name = n;
 		cash = startcash;
 		isBankrupt = false;
 		Position = 0;
+		Ownerships = new ArrayList<Property>();
 	}
 	public void addCash(int a)
 	{
@@ -61,7 +63,7 @@ public class Player
 	}
 	public String toString()
 	{
-		return ("{Name: " + name + ", Cash: " + cash + "}");
+		return ("{Name: " + name + ", Cash: " + cash + ", Properties: " + Ownerships() + "}");
 	}
 	public void movePlayer(int b)
 	{
@@ -74,5 +76,13 @@ public class Player
 	public int getPosition()
 	{
 		return Position;
+	}
+	public void addProperty(Property a)
+	{
+		Ownerships.add(a);
+	}
+	public ArrayList<Property> Ownerships()
+	{
+		return Ownerships;
 	}
 }
