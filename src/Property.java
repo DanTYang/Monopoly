@@ -24,6 +24,14 @@ public class Property
 		ownership = null;
 		rent = r;
 	}
+	public void removeHouse()
+	{
+		if(houses != 0)
+		{
+			rent /= 5;
+			houses--;
+		}
+	}
 	public int position()
 	{
 		return position();
@@ -50,8 +58,11 @@ public class Property
 	}
 	public void addHouse()
 	{
-		houses++;
-		rent *= 5;
+		if(!(houses > 5))
+		{
+			houses++;
+			rent *= 5;
+		}
 	}
 	public int house()
 	{

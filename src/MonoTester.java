@@ -117,9 +117,18 @@ public class MonoTester
 			{
 				if(input.equals("house"))
 				{
-					System.out.println("Which Property would You like to add a house? (Up to 5)");
+					System.out.println("Which Property would You like to edit a housing? (Up to 5)");
 					String property = a.nextLine();
-					tempPlayer.findProperty(property).addHouse();
+					System.out.println("Would you like to add or remove");
+					String Stringholder = a.nextLine();
+					if(Stringholder.equals("add"))
+					{
+						tempPlayer.findProperty(property).addHouse();
+					}
+					else
+					{
+						tempPlayer.findProperty(property).removeHouse();
+					}
 				}
 				System.out.println("What is your next action?");
 				input = a.nextLine();
