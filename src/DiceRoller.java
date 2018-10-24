@@ -10,14 +10,17 @@ public class DiceRoller
 	}
 	public int diceA()
 	{
+		rerollDice();
 		return a;
 	}
 	public int diceB()
 	{
+		rerollDice();
 		return b;
 	}
 	public int total()
 	{
+		rerollDice();
 		return (a + b);
 	}
 	public void rerollDice()

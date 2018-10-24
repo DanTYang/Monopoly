@@ -4,54 +4,59 @@ import java.util.Queue;
 public class Properties 
 {
 	private Property[] a;
+	private int n;
+	private int z;
+	private int G;
 	public Properties()
 	{
+		int n = 1;
+		z = 4;
 		a = new Property[40];
 		insertProp();
 	}
-	
 	public void insertProp()
 	{
-		Property p1 = new Property("Go", -1, -200);
-		Property p2 = new Property("Reverse R*pe", 0, 60);
-		Property p3 = new Property("Community Chest", -1, 0);
-		Property p4 = new Property("Ugly Bastard", 0, 60);
-		Property p5 = new Property("Income Tax", -1, 200);
-		Property p6 = new Property("Useless Goddess Station", 8, 200);
-		Property p7 = new Property("Thick Thigh Town", 1, 100);
-		Property p8 = new Property("Chance", -1, 0);
-		Property p9 = new Property("Justice Land", 1, 100);
-		Property p10 = new Property("Big Titty Goth GF", 1, 100);
-		Property p11 = new Property("Just Visting Jail", -1, 0);
-		Property p12 = new Property("Boatgirl Bay", 2, 140);
-		Property p13 = new Property("Electric Company", 9, 150);
-		Property p14 = new Property("Planet-chan ISS", 2, 140);
-		Property p15 = new Property("Snek Island", 2, 160);
-		Property p16 = new Property("Dio Station", 8, 200);
-		Property p17 = new Property("Loli Lounge", 3, 180);
-		Property p18 = new Property("Community Chest", -1, 0);
-		Property p19 = new Property("Platlet Park", 3, 180);
-		Property p20 = new Property("Megamin Mayhem", 3, 200);
-		Property p21 = new Property("Free Karma", -1, 0);
-		Property p22 = new Property("Erwin Expressway", 4, 220);
-		Property p23 = new Property("Chance", -1, 0);
-		Property p24 = new Property("Culture Cult", 4, 220);
-		Property p25 = new Property("Panzer Lake", 4, 240 );
-		Property p26 = new Property("Darling Station", 8, 200);
-		Property p27 = new Property("Cory Cabin", 5, 260);
-		Property p28 = new Property("Close Cove", 5, 260);
-		Property p29 = new Property("Water Works", 9, 150);
-		Property p30 = new Property("Oreo County", 5, 280);
-		Property p31 = new Property("Go To Jail", -1, 0);
-		Property p32 = new Property("Sign Street", 6, 300);
-		Property p33 = new Property("Sauce Pit", 6, 320);
-		Property p34 = new Property("Blends S Street", 6, 300);
-		Property p35 = new Property("Community Chest", -1, 0);
-		Property p36 = new Property("Monika Station", 8, 200);
-		Property p37 = new Property("Chance", -1, 0);
-		Property p38 = new Property("Ahegao Avenue", 7, 350);
-		Property p39 = new Property("Super Tax", -1, 100);
-		Property p40 = new Property("Roman Road", 7, 400);
+		DiceRoller tempRoller = new DiceRoller();
+		Property p1 = new Property("Go", -1, 0, 0);
+		Property p2 = new Property("Reverse R*pe", 0, 60, 2);
+		Property p3 = new Property("Community Chest", -1, 0, 0);
+		Property p4 = new Property("Ugly Bastard", 0, 60, 4);
+		Property p5 = new Property("Income Tax", -1, 0, 200);
+		Property p6 = new Property("Useless Goddess Station", 8, 200, 25 * n);
+		Property p7 = new Property("Thick Thigh Town", 1, 100, 6);
+		Property p8 = new Property("Chance", -1, 0, 0);
+		Property p9 = new Property("Justice Land", 1, 100, 6);
+		Property p10 = new Property("Big Titty Goth GF", 1, 100, 8);
+		Property p11 = new Property("Just Visting Jail", -1, 0, 0);
+		Property p12 = new Property("Boatgirl Bay", 2, 140, 10);
+		Property p13 = new Property("Electric Company", 9, 150, (tempRoller.total() * z));
+		Property p14 = new Property("Planet-chan ISS", 2, 140, 10);
+		Property p15 = new Property("Snek Island", 2, 160, 12);
+		Property p16 = new Property("Dio Station", 8, 200, 25 * n);
+		Property p17 = new Property("Loli Lounge", 3, 180, 14);
+		Property p18 = new Property("Community Chest", -1, 0, 0);
+		Property p19 = new Property("Platlet Park", 3, 180, 14);
+		Property p20 = new Property("Megamin Mayhem", 3, 200, 16);
+		Property p21 = new Property("Free Karma", -1, 0, (-1 * G));
+		Property p22 = new Property("Erwin Expressway", 4, 220, 18);
+		Property p23 = new Property("Chance", -1, 0, 0);
+		Property p24 = new Property("Culture Cult", 4, 220, 18);
+		Property p25 = new Property("Panzer Lake", 4, 240, 20);
+		Property p26 = new Property("Darling Station", 8, 200, 25 * n);
+		Property p27 = new Property("Cory Cabin", 5, 260, 22);
+		Property p28 = new Property("Close Cove", 5, 260, 22);
+		Property p29 = new Property("Water Works", 9, 150, (tempRoller.total() * z));
+		Property p30 = new Property("Oreo County", 5, 280, 24);
+		Property p31 = new Property("Go To Jail", -1, 0, 0);
+		Property p32 = new Property("Sign Street", 6, 300, 26);
+		Property p33 = new Property("Sauce Pit", 6, 320, 26);
+		Property p34 = new Property("Community Chest", -1, 0, 0);
+		Property p35 = new Property("Blends S Street", 6, 300, 28);
+		Property p36 = new Property("Monika Station", 8, 200 , 25 * n);
+		Property p37 = new Property("Chance", -1, 0, 0);
+		Property p38 = new Property("Ahegao Avenue", 7, 350, 35);
+		Property p39 = new Property("Super Tax", -1, 0, 100);
+		Property p40 = new Property("Roman Road", 7, 400,50);
 		a[0] = p1;
 		a[1] = p2;
 		a[2] = p3;
@@ -92,6 +97,18 @@ public class Properties
 		a[37] = p38;
 		a[38] = p39;
 		a[39] = p40;		
+	}
+	public void changeN(int ntemp)
+	{
+		n = ntemp;
+	}
+	public void changeZ(int ztemp)
+	{
+		z = ztemp;
+	}
+	public void changeG(int Gtemp)
+	{
+		G += Gtemp;
 	}
 	public Property getProp(int b)
 	{

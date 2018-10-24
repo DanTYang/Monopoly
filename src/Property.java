@@ -11,7 +11,8 @@ public class Property
 	private boolean isMorgage;  
 	private boolean isAvailable;
 	private Player ownership;
-	public Property(String n, int G, int c)
+	private int rent;
+	public Property(String n, int G, int c, int r)
 	{
 		name = n;
 		MonopolyGroup = G;
@@ -21,6 +22,7 @@ public class Property
 		isMorgage = false;
 		isAvailable = true;
 		ownership = null;
+		rent = r;
 	}
 	public int position()
 	{
@@ -49,6 +51,7 @@ public class Property
 	public void addHouse()
 	{
 		houses++;
+		rent *= 5;
 	}
 	public int house()
 	{
@@ -99,22 +102,9 @@ public class Property
 			isAvailable = true;
 		}
 	}
-	public void bid(int a) 
+	public int rent()
 	{
-		Scanner sc = new Scanner(System.in);
-		int counter = a;
-		int playerNum = 1;
-		int max = 0;;
-		while(counter > 0)
-		{
-			System.out.println("How much is Player " + playerNum + " betting?");
-			int amount = sc.nextInt();
-			if(amount > max)
-			{
-				max = amount;
-			}
-		}
-		
+		return rent;
 	}
 	public String toString()
 	{

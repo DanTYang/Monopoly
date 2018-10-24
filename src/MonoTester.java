@@ -40,7 +40,6 @@ public class MonoTester
 		System.out.println("-----------");
 		while(Players.size() >= 2)
 		{
-			Dice.rerollDice();
 			Player tempPlayer = (Player) Players.poll();
 			System.out.println("It is now Player " + tempPlayer.DisplayName() + "'s turn");
 			if(tempPlayer.returnBankrupt())
@@ -48,13 +47,14 @@ public class MonoTester
 				System.out.println("Player " + tempPlayer.DisplayName() + " Is already out of the Game");
 				continue;
 			}
-			System.out.println("You move: " + Dice.total() + " Spaces.");
-			if((tempPlayer.getPosition() + Dice.total()) >= 40)
+			int rolled = Dice.total();
+			System.out.println("You move: " + rolled + " Spaces.");
+			if((tempPlayer.getPosition() + rolled) >= 40)
 			{
 				tempPlayer.setPosition((tempPlayer.getPosition() + Dice.total()) - 40);
 				tempPlayer.addCash(200);
 			}
-			tempPlayer.movePlayer(Dice.total());
+			tempPlayer.movePlayer(rolled);
 			int playerPosition = tempPlayer.getPosition();
 			Property tempProperty = Anime.getProp(playerPosition);
 			System.out.println("You have landed on: " + tempProperty.name());
@@ -98,7 +98,7 @@ public class MonoTester
 			else
 			{
 				System.out.println("Property " + tempProperty.name() + " is already owned by another player------------------------------------");
-				if(tempPlayer.DisplayCash() < tempProperty.cost())
+				if(tempPlayer.DisplayCash() < tempProperty.rent())
 				{
 					tempPlayer.editBankrupt();
 					System.out.println("Player " + tempPlayer.DisplayName() + " is now out of the game");
@@ -106,16 +106,23 @@ public class MonoTester
 				}
 				else
 				{
-					tempPlayer.takeCash(tempProperty.cost());
-					System.out.println("Player " + tempPlayer.DisplayName() + " has lost " + tempProperty.cost());
+					tempPlayer.takeCash(tempProperty.rent());
+					System.out.println("Player " + tempPlayer.DisplayName() + " has lost " + tempProperty.rent());
 					System.out.println("Player " + tempPlayer.DisplayName() + " now has $" + tempPlayer.DisplayCash());
 				}
 			}
 			System.out.println("What is your next action?");
 			String input = a.nextLine();
-			if(input.equals("house"))
+			while(!input.equals("Finished"))
 			{
-				
+				if(input.equals("house"))
+				{
+					System.out.println("Which Property would You like to add a house? (Up to 5)");
+					String property = a.nextLine();
+					tempPlayer.findProperty(property).addHouse();
+				}
+				System.out.println("What is your next action?");
+				input = a.nextLine();
 			}
 			//Add trading System, add Creating and upgrading house system,
 			Players.add(tempPlayer);

@@ -81,6 +81,18 @@ public class Player
 	{
 		Ownerships.add(a);
 	}
+	public Property findProperty(String name)
+	{
+		Property temp = null;
+		for(int i = 0; i < Ownerships.size(); i++)
+		{
+			if(name.equals(Ownerships.get(i).name()))
+			{
+				temp = Ownerships.get(i);
+			}
+		}
+		return temp;
+	}
 	public ArrayList<Property> Ownerships()
 	{
 		return Ownerships;
