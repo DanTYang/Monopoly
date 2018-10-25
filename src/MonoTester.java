@@ -76,24 +76,22 @@ public class MonoTester
 					{
 						System.out.println("You have now bought " + tempProperty.name());
 						tempPlayer.takeCash(tempProperty.cost());
-						tempProperty.changeAvailable();
 						tempProperty.modifyOwnership(tempPlayer);
 						tempPlayer.addProperty(tempProperty);
 					}
 					else
 					{
 						System.out.println("Insufficient Funds");
-						tempPlayer.editBankrupt();
-						System.out.println("Player " + tempPlayer.DisplayName() + " is now out of the game");
-						playerAmount--;
-						//tempProperty.bid(playerAmount);
+						System.out.println("You are now bidding");
+						tempProperty.modifyOwnership(tempProperty.bid(Players, tempPlayer));
 					}
 				}
 				if(BidBuy.equals("Bid"))
 				{
-					System.out.println("You have bid");
-					//tempProperty.bid(playerAmount);
+					System.out.println("You are bid");
+					tempProperty.modifyOwnership(tempProperty.bid(Players, tempPlayer));
 				}
+				System.out.println(Players);
 			}
 			else
 			{
