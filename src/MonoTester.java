@@ -1,12 +1,10 @@
 import java.util.*;
 
 /**
- * @author Daniel Yang
+ * @author Daniel Yang, Sam Olagun
  * 
  * What We currently need to code now
- * 	Bidding System
  * 	Trading System
- * 	Housing Creating and upgrading System
  * 	Reading cards and implement their effects(Such as chance, community chests, and special properties in group -1 monopoly groups
  *
  */
