@@ -61,10 +61,30 @@ public class MonoTester
 			if(tempProperty.MonopolyGroup() == -1)
 			{
 				System.out.println("You have landed on " + tempProperty.name());
-				Players.add(tempPlayer);
-				continue;
+				if (tempProperty.getPosition() == 0 || tempProperty.getPostion() == 10) { // Just visiting jail and GO
+					break;
+				}
+				else if (tempProperty.getPosition() == 2 || tempProperty.getPosition() == 17 || tempProperty.getPosition() == 33) { // Community Chest
+					CC.draw();
+				}
+				else if (tempProperty.getPosition() == 7 || tempProperty.getPosition() == 22 || tempProperty.getPosition() == 36) { // Chance
+					ChanceDeck.draw();
+				}
+				else if (tempProperty.getPosition() == 38) { // Luxury tax
+					tempPlayer.takeCash(100);
+				}
+				else if (tempProperty.getPosition() == 4) { // Income tax
+					tempPlayer.takeCash(200);
+				}
+				else if (tempProperty.getPosition() == 20) { // Free karma/parking
+					tempPlayer.addCash(cost);
+				}
+				else if (tempProperty.getPosition() == 30) { // go to jail
+					tempPlayer.setPosition(10);
+					tempPlayer.editJail();
+				}
 			}
-			if(tempProperty.available())
+			else if(tempProperty.available())
 			{
 				System.out.println("Bid or Buy?");		
 				String BidBuy = a.nextLine();
