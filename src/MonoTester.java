@@ -61,6 +61,7 @@ public class MonoTester
 			if(tempProperty.MonopolyGroup() == -1)
 			{
 				System.out.println("You have landed on " + tempProperty.name());
+				
 				Players.add(tempPlayer);
 				continue;
 			}
