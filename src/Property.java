@@ -14,7 +14,8 @@ public class Property
 	private boolean isAvailable;
 	private Player ownership;
 	private int rent;
-	public Property(String n, int G, int c, int r)
+	private int position;
+	public Property(String n, int G, int c, int r, int p)
 	{
 		name = n;
 		MonopolyGroup = G;
@@ -25,6 +26,7 @@ public class Property
 		isAvailable = true;
 		ownership = null;
 		rent = r;
+		position = p;
 	}
 	public void removeHouse()
 	{
@@ -176,5 +178,8 @@ public class Property
 	{
 		return name();
 	}
-	
+	public int getPosition()
+	{
+		return position;
+	}
 }
