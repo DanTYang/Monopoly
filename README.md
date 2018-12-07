@@ -8,4 +8,5 @@ Monopoly is a reasonably complex board game, we wanted to challenge our CS knowl
 
 ### How it Works
 
+
 (c) 2018 Dan Yang, Su Min Kim, Sam Olagun, Yen Lu
