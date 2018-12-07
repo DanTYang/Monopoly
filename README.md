@@ -19,7 +19,7 @@ We've fragmented our application into classes that replicate Monopoly gameplay f
 This is an abstract class for `CommunityChest.java` and `DiceRoller.java`.
 
 #### Community Chests
-Manually adds all
+Manually adds all of the Community Chest Cards, their names, their descriptions, and assigns each an index value for lookup and card implementation.
 
 #### Dice Roller
 
