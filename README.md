@@ -8,5 +8,13 @@ Monopoly is a reasonably complex board game, we wanted to challenge our CS knowl
 
 ### How it Works
 
+We've fragmented our application into a classes that replicate certain function in monopoly.
+
+- Card
+- Community Chests
+- Dice Roller
+- Player
+- Property
+- Trade
 
 (c) 2018 Dan Yang, Su Min Kim, Sam Olagun, Yen Lu
