@@ -42,4 +42,7 @@ This implements two dices being thrown, and implements methods that returns the 
 #### Player
 This implements the struture of each player, such as the name of the player, their balance, their position, their state (Bankruptcy and if they are in jail), and the properties they own
 
+#### Property
+This implements the structure of all 40 properties of monopoly, such as the name of the property, their position on the board, their atributes, and the family (which color) they belong to.
+
 (c) 2018 Dan Yang, Su Min Kim, Sam Olagun, Yen Lu
