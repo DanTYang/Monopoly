@@ -40,6 +40,6 @@ Manually adds all of the Chance Cards, their names, their descriptions, and assi
 This implements two dices being thrown, and implements methods that returns the randomized value and rerolling the dice.
 
 #### Player
-This implements the struture of each player, such as the name of the player, their balance, and what they own
+This implements the struture of each player, such as the name of the player, their balance, their position, their state (Bankruptcy and if they are in jail), and the properties they own
 
 (c) 2018 Dan Yang, Su Min Kim, Sam Olagun, Yen Lu
