@@ -19,7 +19,7 @@ After there is one player left, the victor is decided and displayed.
 ## The Setup
 We've fragmented our application into classes that replicate Monopoly gameplay features. As of now, we've only completed these classes in **Java**, but we intend on replicating the behavior in other languages.
 
-- ⛔️`Card.java`
+- ⛔️`Card.java`(Is not fully integraded within the loop)
   - ✅ `CommunityChests.java`
   - ✅ `Chance.java`
 - ✅ `DiceRoller.java`
