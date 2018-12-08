@@ -4,7 +4,13 @@ This is a repository for replicating Monopoly in Java.
 ## Motivation
 Monopoly is a reasonably complex board game, we wanted to challenge our CS knowledge and create Monopoly in a variety of languages including **Python**, **JavaScript**, and **Java**.
 
-## What is the Setup?
+## How Does It Work?
+Monopoly uses a large while loop and a set of Queues (Players, Community Chest Cards, and Chance Cards) and arrays (Property and Ownership for each player).
+
+### Setup Phase
+Monopoly first starts by first prompting the number of players and their names. It then takes in these responses, assigns everyone a random roll, assigns them with the starting amount of cash, transforms these values as a Player object, and places it in a Queue.
+
+## The Setup
 We've fragmented our application into classes that replicate Monopoly gameplay features. As of now, we've only completed these classes in **Java**, but we intend on replicating the behavior in other languages.
 
 - ⛔️`Card.java`
